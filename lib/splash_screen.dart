@@ -1,8 +1,10 @@
 import 'package:first_task/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
+// ignore: camel_case_types
 class Splash_screen extends StatefulWidget {
   const Splash_screen({super.key});
 
@@ -10,29 +12,21 @@ class Splash_screen extends StatefulWidget {
   State<Splash_screen> createState() => _Splash_screenState();
 }
 
+// ignore: camel_case_types
 class _Splash_screenState extends State<Splash_screen> {
   @override
   void initState() {
     super.initState();
     _navigatetohme();
   }
-
-  // Future signIn() async {
-  //   showDialog(
-  //       context: context,
-  //       builder: (Context) {
-  //         return Center(
-  //           child: CircularProgressIndicator(),
-  //         );
-  //       });
-  // }
-
+  
   _navigatetohme() async {
-    await Future.delayed(Duration(milliseconds: 1500), (() {}));
+    await Future.delayed(const Duration(milliseconds: 1500), (() {}));
+    // ignore: use_build_context_synchronously
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => Login_page(),
+          builder: (context) => const Login_page(),
         ));
   }
 
@@ -44,7 +38,7 @@ class _Splash_screenState extends State<Splash_screen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               height: 60,
               width: 60,
               child: ClipRRect(
@@ -60,10 +54,10 @@ class _Splash_screenState extends State<Splash_screen> {
                     color: Colors.white,
                     fontSize: 35,
                     fontWeight: FontWeight.w600)),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            SpinKitFadingCircle(
+            const SpinKitFadingCircle(
               color: Colors.white,
               size: 50.0,
             )

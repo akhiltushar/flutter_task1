@@ -3,6 +3,7 @@ import 'package:first_task/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: camel_case_types
 class Gender_page extends StatefulWidget {
   const Gender_page({super.key});
 
@@ -10,6 +11,7 @@ class Gender_page extends StatefulWidget {
   State<Gender_page> createState() => _Gender_pageState();
 }
 
+// ignore: camel_case_types
 class _Gender_pageState extends State<Gender_page> {
   var _gender = "";
 
@@ -18,9 +20,12 @@ class _Gender_pageState extends State<Gender_page> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: InkWell(
+          onTap: () => Navigator.pop(context),
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
         ),
         backgroundColor: BG_color,
       ),
@@ -33,13 +38,12 @@ class _Gender_pageState extends State<Gender_page> {
                     fontSize: 25,
                     color: Colors.black,
                     fontWeight: FontWeight.w500)),
-            SizedBox(
+            const SizedBox(
               height: 400,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-
                 //Male Gender
                 InkWell(
                   onTap: () {
@@ -58,7 +62,7 @@ class _Gender_pageState extends State<Gender_page> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 80,
                           width: 70,
                           child: Image.asset("assets/images/male.png",
@@ -72,7 +76,6 @@ class _Gender_pageState extends State<Gender_page> {
                     ),
                   ),
                 ),
-
                 //Female Gender
                 InkWell(
                   onTap: () {
@@ -91,7 +94,7 @@ class _Gender_pageState extends State<Gender_page> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 80,
                           width: 70,
                           child: Image.asset("assets/images/female.png",
@@ -105,7 +108,6 @@ class _Gender_pageState extends State<Gender_page> {
                     ),
                   ),
                 ),
-
                 // Other Gender
                 InkWell(
                   onTap: () {
@@ -124,7 +126,7 @@ class _Gender_pageState extends State<Gender_page> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
+                        SizedBox(
                           height: 80,
                           width: 70,
                           child: Image.asset("assets/images/other.png",
@@ -140,7 +142,7 @@ class _Gender_pageState extends State<Gender_page> {
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
             InkWell(
@@ -148,7 +150,7 @@ class _Gender_pageState extends State<Gender_page> {
                 if (_gender.isEmpty) {
                   // Show msg to select gender
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text(
                         "Please select gender",
                       ),
@@ -157,7 +159,7 @@ class _Gender_pageState extends State<Gender_page> {
                 } else {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Age_page()),
+                    MaterialPageRoute(builder: (context) => const Age_page()),
                   );
                 }
               },

@@ -3,6 +3,7 @@ import 'package:first_task/goals_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: camel_case_types
 class Age_page extends StatefulWidget {
   const Age_page({super.key});
 
@@ -10,6 +11,7 @@ class Age_page extends StatefulWidget {
   State<Age_page> createState() => _Age_pageState();
 }
 
+// ignore: camel_case_types
 class _Age_pageState extends State<Age_page> {
   var _ageSelection = "";
 
@@ -19,9 +21,12 @@ class _Age_pageState extends State<Age_page> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: BG_color,
-        leading: Icon(
-          Icons.arrow_back_ios,
-          color: Colors.black,
+        leading: InkWell(
+          onTap: () => Navigator.pop(context),
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
         ),
       ),
       backgroundColor: BG_color,
@@ -34,7 +39,7 @@ class _Age_pageState extends State<Age_page> {
                       fontSize: 25,
                       color: Colors.black,
                       fontWeight: FontWeight.w500)),
-              SizedBox(
+              const SizedBox(
                 height: 330,
               ),
               Column(
@@ -93,8 +98,7 @@ class _Age_pageState extends State<Age_page> {
                       )
                     ],
                   ),
-
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   //Age Box set 2
@@ -151,9 +155,8 @@ class _Age_pageState extends State<Age_page> {
                       )
                     ],
                   ),
-
                   //Next Page Button
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   InkWell(
@@ -161,7 +164,7 @@ class _Age_pageState extends State<Age_page> {
                       if (_ageSelection.isEmpty) {
                         // Show msg to select gender
                         ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
+                          const SnackBar(
                             content: Text(
                               "Please select age",
                             ),
@@ -170,7 +173,7 @@ class _Age_pageState extends State<Age_page> {
                       } else {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Goal_page()),
+                          MaterialPageRoute(builder: (context) => const Goal_page()),
                         );
                       }
                     },
