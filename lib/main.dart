@@ -1,5 +1,3 @@
-import 'package:first_task/gender_page.dart';
-import 'package:first_task/login_page.dart';
 import 'package:first_task/splash_screen.dart';
 import 'package:flutter/material.dart';
 
