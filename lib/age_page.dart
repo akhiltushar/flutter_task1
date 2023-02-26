@@ -67,7 +67,9 @@ class _Age_pageState extends State<Age_page> {
                           child: Center(
                             child: Text("12-29",
                                 style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: _ageSelection == "12-29"
+                                        ? Colors.white
+                                        : Colors.black,
                                     fontWeight: FontWeight.w500)),
                           ),
                         ),
@@ -91,7 +93,9 @@ class _Age_pageState extends State<Age_page> {
                           child: Center(
                             child: Text("30-39",
                                 style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: _ageSelection == "30-39"
+                                        ? Colors.white
+                                        : Colors.black,
                                     fontWeight: FontWeight.w500)),
                           ),
                         ),
@@ -124,7 +128,9 @@ class _Age_pageState extends State<Age_page> {
                           child: Center(
                             child: Text("40-49",
                                 style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: _ageSelection == "40-49"
+                                        ? Colors.white
+                                        : Colors.black,
                                     fontWeight: FontWeight.w500)),
                           ),
                         ),
@@ -148,7 +154,9 @@ class _Age_pageState extends State<Age_page> {
                           child: Center(
                             child: Text("50+",
                                 style: GoogleFonts.poppins(
-                                    color: Colors.black,
+                                    color: _ageSelection == "50+"
+                                        ? Colors.white
+                                        : Colors.black,
                                     fontWeight: FontWeight.w500)),
                           ),
                         ),
@@ -173,7 +181,8 @@ class _Age_pageState extends State<Age_page> {
                       } else {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Goal_page()),
+                          MaterialPageRoute(
+                              builder: (context) => const Goal_page()),
                         );
                       }
                     },

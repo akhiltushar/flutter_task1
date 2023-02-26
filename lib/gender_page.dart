@@ -70,7 +70,9 @@ class _Gender_pageState extends State<Gender_page> {
                         ),
                         Text("Male",
                             style: GoogleFonts.poppins(
-                                color: Colors.black,
+                                color: _gender == "Male"
+                                        ? Colors.white
+                                        : Colors.black,
                                 fontWeight: FontWeight.w500))
                       ],
                     ),
@@ -102,7 +104,9 @@ class _Gender_pageState extends State<Gender_page> {
                         ),
                         Text("Female",
                             style: GoogleFonts.poppins(
-                                color: Colors.black,
+                                color: _gender == "Female"
+                                        ? Colors.white
+                                        : Colors.black,
                                 fontWeight: FontWeight.w500))
                       ],
                     ),
@@ -134,7 +138,9 @@ class _Gender_pageState extends State<Gender_page> {
                         ),
                         Text("Other",
                             style: GoogleFonts.poppins(
-                                color: Colors.black,
+                                color: _gender == "Other"
+                                        ? Colors.white
+                                        : Colors.black,
                                 fontWeight: FontWeight.w500))
                       ],
                     ),
