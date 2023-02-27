@@ -13,8 +13,6 @@ class Goal_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _Goal_pageState extends State<Goal_page> {
-  var _goalSelection = "";
-
   // ignore: prefer_typing_uninitialized_variables
   var selectedRadio;
 
@@ -65,19 +63,12 @@ class _Goal_pageState extends State<Goal_page> {
                 child: Column(
                   children: [
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Win at Work";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Win at Work"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 1 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -96,15 +87,20 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Win at Work",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Win at Work"
+                                    color: selectedRadio == 1
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 115,
                             ),
-                            const Radio(
-                                value: 1, groupValue: null, onChanged: null)
+                            Radio(
+                              value: 1,
+                              groupValue: selectedRadio,
+                              onChanged: (val) {
+                                setSelectedRadio(val as int);
+                              },
+                            )
                           ],
                         ),
                       ),
@@ -114,19 +110,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Have more money";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Have more money"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 2 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -145,15 +134,20 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Have more money",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Have more money"
+                                    color: selectedRadio == 2
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 68,
                             ),
-                            const Radio(
-                                value: 2, groupValue: null, onChanged: null)
+                            Radio(
+                              value: 2,
+                              groupValue: selectedRadio,
+                              onChanged: (val) {
+                                setSelectedRadio(val as int);
+                              },
+                            )
                           ],
                         ),
                       ),
@@ -163,19 +157,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Be productive";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Be productive"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 3 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -194,15 +181,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Be productive",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Be productive"
+                                    color: selectedRadio == 3
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 100,
                             ),
-                            const Radio(
-                                value: 3, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 3,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -212,19 +203,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Build strong family";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Build strong family"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 4 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -243,15 +227,20 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Build strong family",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Build strong family"
+                                    color: selectedRadio == 4
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 68,
                             ),
-                            const Radio(
-                                value: 4, groupValue: null, onChanged: null)
+                            Radio(
+                              value: 4,
+                              groupValue: selectedRadio,
+                              onChanged: (val) {
+                                setSelectedRadio(val as int);
+                              },
+                            )
                           ],
                         ),
                       ),
@@ -261,19 +250,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Have a healthy body";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Have a healthy body"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 5 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -292,15 +274,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Have a healthy body",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Have a healthy body"
+                                    color: selectedRadio == 5
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 55,
                             ),
-                            const Radio(
-                                value: 5, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 5,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -310,19 +296,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Love & be loved";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Love & be loved"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 6 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -341,15 +320,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Love & be loved",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Love & be loved"
+                                    color: selectedRadio == 6
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 88,
                             ),
-                            const Radio(
-                                value: 6, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 6,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -359,19 +342,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Joined the forces";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Joined the forces"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 7 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -390,15 +366,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Joined the forces",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Joined the forces"
+                                    color: selectedRadio == 7
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 78,
                             ),
-                            const Radio(
-                                value: 7, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 7,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -407,19 +387,13 @@ class _Goal_pageState extends State<Goal_page> {
                     const SizedBox(
                       height: 10,
                     ),
-                    InkWell(onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Explore more countries";
-                          });
-                      },
+                    InkWell(
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Explore more countries"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 8 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -438,15 +412,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Explore more countries",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Explore more countries"
+                                    color: selectedRadio == 8
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 38,
                             ),
-                            const Radio(
-                                value: 8, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 8,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -456,19 +434,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Behind the camera";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Behind the camera"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 9 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -487,15 +458,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Behind the camera",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Behind the camera"
+                                    color: selectedRadio == 9
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 65,
                             ),
-                            const Radio(
-                                value: 9, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 9,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -505,19 +480,12 @@ class _Goal_pageState extends State<Goal_page> {
                       height: 10,
                     ),
                     InkWell(
-                      onTap: () {
-                        // tell widget to load again
-                          setState(() {
-                            _goalSelection = "Know more about India";
-                          });
-                      },
                       child: Container(
                         height: 60,
                         width: 300,
                         decoration: BoxDecoration(
-                          color: _goalSelection == "Know more about India"
-                                ? Colors.blue
-                                : Colors.white,
+                          color:
+                              selectedRadio == 10 ? Colors.lightBlueAccent : Colors.white,
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: Row(
@@ -536,15 +504,19 @@ class _Goal_pageState extends State<Goal_page> {
                             ),
                             Text("Know more about India",
                                 style: GoogleFonts.poppins(
-                                    color: _goalSelection == "Know more about India"
+                                    color: selectedRadio == 10
                                         ? Colors.white
                                         : Colors.black,
                                     fontWeight: FontWeight.w500)),
                             const SizedBox(
                               width: 35,
                             ),
-                            const Radio(
-                                value: 10, groupValue: null, onChanged: null)
+                            Radio(
+                                value: 10,
+                                groupValue: selectedRadio,
+                                onChanged: (val) {
+                                  setSelectedRadio(val as int);
+                                })
                           ],
                         ),
                       ),
@@ -560,7 +532,7 @@ class _Goal_pageState extends State<Goal_page> {
             //Bottom Button
             InkWell(
               onTap: () {
-                if (_goalSelection.isEmpty) {
+                if (selectedRadio.isEmpty) {
                   // Show msg to select gender
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
