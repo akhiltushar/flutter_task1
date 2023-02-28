@@ -532,7 +532,7 @@ class _Goal_pageState extends State<Goal_page> {
             //Bottom Button
             InkWell(
               onTap: () {
-                if (selectedRadio.isEmpty) {
+                if (selectedRadio == 0) {
                   // Show msg to select gender
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

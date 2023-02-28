@@ -56,7 +56,7 @@ class _Gender_pageState extends State<Gender_page> {
                     height: 110,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: _gender == "Male" ? Colors.blue : Colors.white,
+                      color: _gender == "Male" ? Colors.lightBlueAccent : Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -90,7 +90,7 @@ class _Gender_pageState extends State<Gender_page> {
                     height: 110,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: _gender == "Female" ? Colors.blue : Colors.white,
+                      color: _gender == "Female" ? Colors.lightBlueAccent : Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -124,7 +124,7 @@ class _Gender_pageState extends State<Gender_page> {
                     height: 110,
                     width: 100,
                     decoration: BoxDecoration(
-                      color: _gender == "Other" ? Colors.blue : Colors.white,
+                      color: _gender == "Other" ? Colors.lightBlueAccent : Colors.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(

@@ -60,7 +60,7 @@ class _Age_pageState extends State<Age_page> {
                           width: 100,
                           decoration: BoxDecoration(
                             color: _ageSelection == "12-29"
-                                ? Colors.blue
+                                ? Colors.lightBlueAccent
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -86,7 +86,7 @@ class _Age_pageState extends State<Age_page> {
                           width: 100,
                           decoration: BoxDecoration(
                             color: _ageSelection == "30-39"
-                                ? Colors.blue
+                                ? Colors.lightBlueAccent
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -121,7 +121,7 @@ class _Age_pageState extends State<Age_page> {
                           width: 100,
                           decoration: BoxDecoration(
                             color: _ageSelection == "40-49"
-                                ? Colors.blue
+                                ? Colors.lightBlueAccent
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
@@ -147,7 +147,7 @@ class _Age_pageState extends State<Age_page> {
                           width: 100,
                           decoration: BoxDecoration(
                             color: _ageSelection == "50+"
-                                ? Colors.blue
+                                ? Colors.lightBlueAccent
                                 : Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
