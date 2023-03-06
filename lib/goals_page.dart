@@ -1,3 +1,4 @@
+import 'package:first_task/time_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -544,7 +545,7 @@ class _Goal_pageState extends State<Goal_page> {
                 } else {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Goal_page()),
+                    MaterialPageRoute(builder: (context) => const timePage()),
                   );
                 }
               },

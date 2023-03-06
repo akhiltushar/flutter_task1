@@ -1,4 +1,3 @@
-import 'package:first_task/goals_page.dart';
 import 'package:first_task/splash_screen.dart';
 import 'package:flutter/material.dart';
 
