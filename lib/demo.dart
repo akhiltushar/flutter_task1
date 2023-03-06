@@ -21,59 +21,63 @@ class _DemoState extends State<Demo> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: ListView.builder(
-            itemCount: data.length,
-            itemBuilder: (BuildContext context, int index) {
-              var item = data[index];
-              return InkWell(
-                child: Container(
-                  height: 60,
-                  width: 300,
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: item["isSelected"] == true
-                        ? Colors.lightBlueAccent
-                        : Colors.white,
-                    borderRadius: BorderRadius.circular(15),
+    return ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) {
+          var item = data[index];
+          return InkWell(
+            child: Container(
+              height: 60,
+              width: 300, // MediaQuery
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: item["isSelected"] == true
+                    ? Colors.lightBlueAccent
+                    : Colors.white,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Row(
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  // ignore: prefer_const_constructors
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      item["icon"].toString(),
+                      style: TextStyle(fontSize: 20),
+                    ),
                   ),
-                  child: Row(
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
-                      // ignore: prefer_const_constructors
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          item["icon"].toString(),
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(item["title"].toString(),
-                          style: TextStyle(
-                              color: item["isSelected"] == true
-                                  ? Colors.white
-                                  : Colors.black,
-                              fontWeight: FontWeight.w500)),
-                      const SizedBox(
-                        width: 115,
-                      ),
-
-                      InkWell(
-                        onTap: () {
-                          seletedList(item);
-                        },
-                        child: Icon(item["isSelected"] == false
-                            ? Icons.radio_button_off
-                            : Icons.radio_button_checked),
-                      )
-                    ],
+                  const SizedBox(
+                    width: 10,
                   ),
-                ),
-              );
-            }));
+                  Text(
+                    item["title"].toString(),
+                    style: TextStyle(
+                      color: item["isSelected"] == true
+                          ? Colors.white
+                          : Colors.black,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  const Expanded(
+                    child: SizedBox(),
+                  ),
+                  InkWell(
+                    onTap: () {
+                      seletedList(item);
+                    },
+                    child: Icon(item["isSelected"] == false
+                        ? Icons.radio_button_off
+                        : Icons.radio_button_checked),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 
   seletedList(item) {
