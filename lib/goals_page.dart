@@ -49,7 +49,7 @@ class _Goal_pageState extends State<Goal_page> {
       body: Center(
         child: Column(
           children: [
-            Text('What are your goals?sss',
+            Text('What are your goals?',
                 style: GoogleFonts.poppins(
                     fontSize: 25,
                     color: Colors.black,

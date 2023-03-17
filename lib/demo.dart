@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 
 class Demo extends StatefulWidget {
   const Demo({super.key});
@@ -12,10 +11,15 @@ class Demo extends StatefulWidget {
 class _DemoState extends State<Demo> {
   var data = [
     {"id": 0, "icon": "🎯", "title": "Win the goals", "isSelected": false},
-    {"id": 1, "icon": "🎯", "title": "Win the ", "isSelected": false},
-    {"id": 2, "icon": "🎯", "title": "Win  goals", "isSelected": false},
-    {"id": 3, "icon": "🎯", "title": "Win tgdgdhe goals", "isSelected": false},
-    {"id": 4, "icon": "🎯", "title": "Win dfgdf goals", "isSelected": false},
+    {"id": 1, "icon": "🤑", "title": "Have more money", "isSelected": false},
+    {"id": 2, "icon": "⏰", "title": "Be productive", "isSelected": false},
+    {"id": 3, "icon": "👨‍👩‍👧‍👦", "title": "Build strong family", "isSelected": false},
+    {"id": 4, "icon": "💪🏻", "title": "Have a healthy body", "isSelected": false},
+    {"id": 5, "icon": "👩‍❤️‍👨", "title": "Love & be loved", "isSelected": false},
+    {"id": 6, "icon": "🚀", "title": "Joined the forces", "isSelected": false},
+    {"id": 7, "icon": "🗺", "title": "Explore more countries", "isSelected": false},
+    {"id": 8, "icon": "🎥", "title": "Behind the camera", "isSelected": false},
+    {"id": 9, "icon": "🇮🇳", "title": "Know more about India", "isSelected": false},
   ];
   var selectedRadio = 0;
 
@@ -25,56 +29,54 @@ class _DemoState extends State<Demo> {
         itemCount: data.length,
         itemBuilder: (BuildContext context, int index) {
           var item = data[index];
-          return InkWell(
-            child: Container(
-              height: 60,
-              width: 300, // MediaQuery
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: item["isSelected"] == true
-                    ? Colors.lightBlueAccent
-                    : Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Row(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  // ignore: prefer_const_constructors
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      item["icon"].toString(),
-                      style: TextStyle(fontSize: 20),
-                    ),
+          return Container(
+            height: 60,
+            width: 300, // MediaQuery
+            margin: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: item["isSelected"] == true
+                  ? Colors.lightBlueAccent
+                  : Colors.white,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Row(
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                // ignore: prefer_const_constructors
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    item["icon"].toString(),
+                    style: const TextStyle(fontSize: 20),
                   ),
-                  const SizedBox(
-                    width: 10,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  item["title"].toString(),
+                  style: TextStyle(
+                    color: item["isSelected"] == true
+                        ? Colors.white
+                        : Colors.black,
+                    fontWeight: FontWeight.w500,
                   ),
-                  Text(
-                    item["title"].toString(),
-                    style: TextStyle(
-                      color: item["isSelected"] == true
-                          ? Colors.white
-                          : Colors.black,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const Expanded(
-                    child: SizedBox(),
-                  ),
-                  InkWell(
-                    onTap: () {
-                      seletedList(item);
-                    },
-                    child: Icon(item["isSelected"] == false
-                        ? Icons.radio_button_off
-                        : Icons.radio_button_checked),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                ],
-              ),
+                ),
+                const Expanded(
+                  child: SizedBox(),
+                ),
+                InkWell(
+                  onTap: () {
+                    seletedList(item);
+                  },
+                  child: Icon(item["isSelected"] == false
+                      ? Icons.radio_button_off
+                      : Icons.radio_button_checked),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+              ],
             ),
           );
         });
